@@ -1,0 +1,35 @@
+﻿@model IEnumerable<TesteBackendV2.Models.equipment_model>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Modelos</h1>
+
+<p>
+    <a asp-action="Create">Criar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Editar</a> |
+                <a asp-controller="equipment_model_state_hourly_earnings" asp-action="Index" asp-route-equipment_model_id="@item.id">Valor Hora</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

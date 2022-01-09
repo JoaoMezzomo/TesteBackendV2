@@ -1,0 +1,38 @@
+﻿@model IEnumerable<TesteBackendV2.Models.equipment_state_history>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Histórico de Estados</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment_state_id)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment_state_id)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

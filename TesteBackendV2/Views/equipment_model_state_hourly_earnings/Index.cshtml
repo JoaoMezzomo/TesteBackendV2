@@ -1,0 +1,38 @@
+﻿@model IEnumerable<TesteBackendV2.Models.equipment_model_state_hourly_earnings>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Valor Hora</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment_model_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment_state_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.value)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment_model_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment_state_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.value)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
